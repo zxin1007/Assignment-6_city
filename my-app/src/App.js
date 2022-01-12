@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import Zipcode from './Zipcode';
+import {Zipcode,City} from './Zipcode';
 
 function App() {
   return (
-    <div>
+    <div className='main'>
       <Zipcode />
+      <City />
     </div>
   );
 }
