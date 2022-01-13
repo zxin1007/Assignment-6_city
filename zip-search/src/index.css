@@ -9,3 +9,16 @@ header {
   border-right: unset;
   margin: 5px 0px;
 }
+
+
+/* remove the arrow on the input field*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
