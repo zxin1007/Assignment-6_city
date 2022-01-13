@@ -1,12 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
 import City from './City';
+import Footer from './Footer';
+import Header from './Header';
 
 function App() {
   return (
-    <div>
+    <>
+      <header><Header /></header>
       <City />
-    </div>
+      <footer>
+        <Footer />
+      </footer>
+    </>
   );
 }
 

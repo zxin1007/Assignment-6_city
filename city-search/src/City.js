@@ -4,14 +4,18 @@ import React from "react";
 function City (){
 
     const [info, setInfo] = React.useState([])
-    const [city, setCity] = React.useState("SPRINGFIELD")
+    const [city, setCity] = React.useState("")
 
     React.useEffect(function(){
-        fetch(`http://ctp-zip-api.herokuapp.com/city/${city}`)
+        if (city){
+            fetch(`http://ctp-zip-api.herokuapp.com/city/${city}`)
             .then(res => res.json())
             .then(json => setInfo(json))
             .catch(err => {console.log("Error Reading data " + err);});
+        }
     },[city])
+
+    console.log(info)
 
     function handleSumbit(event){
         event.preventDefault();
@@ -21,11 +25,16 @@ function City (){
     const display = info.map((data,index )=> <p key={index}>{data}</p>)
 
     return (
-        <form onSubmit={handleSumbit}>
-            <input placeholder="City" name="city" type="text"></input>
-            <input type="submit" value="Submit" />
-            {display}
-        </form>
+        <main>
+            <form onSubmit={handleSumbit}>
+                <input placeholder="City" name="city" type="text"></input>
+                <input className="button" type="submit" value="Search" />
+            </form>
+            <h1>Zipcodes:</h1>
+            <div className="zipcodes">
+                <div className="zipcode">{display}</div>
+            </div>
+        </main>
     )
 }
 
