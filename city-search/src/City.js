@@ -30,7 +30,7 @@ function City (){
                 <input placeholder="City" name="city" type="text"></input>
                 <input className="button" type="submit" value="Search" />
             </form>
-            <h1>Zipcodes:</h1>
+            <h2>Zipcodes:</h2>
             <div className="zipcodes">
                 <div className="zipcode">{display}</div>
             </div>

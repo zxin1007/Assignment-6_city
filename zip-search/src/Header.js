@@ -1,7 +1,7 @@
 
 function Header(props){
     return (
-        <p>Zip Search</p>  
+        <h1>Zip Search</h1>  
     ) 
 }
 

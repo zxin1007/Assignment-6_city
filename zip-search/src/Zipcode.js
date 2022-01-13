@@ -15,6 +15,8 @@ function Zipcode (){
         }
     },[zipcode])
 
+    console.log(info)
+
     function handleSumbit(event){
         event.preventDefault();
         setZipcode(event.target.zipcode.value)
@@ -27,9 +29,10 @@ function Zipcode (){
         <div className="zip-code">
             <form onSubmit={handleSumbit}>
             <input placeholder="Zip Code" name="zipcode" type="number"></input>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Search" />
         </form>
-        <p>{display}</p>
+        <h2>Cities:</h2>
+        {display}
         </div>
     )
 }
