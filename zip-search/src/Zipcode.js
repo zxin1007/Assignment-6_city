@@ -19,14 +19,16 @@ function Zipcode (){
         // console.log(event.target.zipcode.value)
     }
 
-    const display = info.map((data,index )=> <p key={index}>{data.City}</p>)
-
+    const display = info.map((data,index )=> <p key={index} className="data">{data.City}</p>)
+    
     return (
-        <form onSubmit={handleSumbit}>
+        <div className="zip-code">
+            <form onSubmit={handleSumbit}>
             <input placeholder="Zip Code" name="zipcode" type="number"></input>
             <input type="submit" value="Submit" />
-            {display}
         </form>
+        <p>{display}</p>
+        </div>
     )
 }
 

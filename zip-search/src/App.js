@@ -1,12 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
 import Zipcode from './Zipcode';
+import Header from './Header';
+import Footer from "./Footer"
 
 function App() {
   return (
-    <div className='main'>
+    <>
+    <header>
+      <Header/>
+    </header>
+    <main>
       <Zipcode />
-    </div>
+    </main>
+    <footer>
+      <Footer/>
+    </footer>
+    </>
   );
 }
 
