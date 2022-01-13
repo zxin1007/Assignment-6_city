@@ -4,13 +4,15 @@ import React from "react"
 function Zipcode (){
 
     const [info, setInfo] = React.useState([])
-    const [zipcode, setZipcode] = React.useState("10006")
+    const [zipcode, setZipcode] = React.useState("")
 
     React.useEffect(function(){
-        fetch(`http://ctp-zip-api.herokuapp.com/zip/${zipcode}`)
-            .then(res => res.json())
-            .then(json => setInfo(json.map(data => data)))
-            .catch(err=> alert("zip code doesn't match"))
+        if (zipcode){
+            fetch(`http://ctp-zip-api.herokuapp.com/zip/${zipcode}`)
+                .then(res => res.json())
+                .then(json => setInfo(json.map(data => data)))
+                .catch(err=> alert("zip code doesn't match"))
+        }
     },[zipcode])
 
     function handleSumbit(event){
